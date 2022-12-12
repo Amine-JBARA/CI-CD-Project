@@ -48,7 +48,14 @@ pipeline {
                  }
               }
 		
-              
+              stage('Push Docker Image') {
+                   steps {
+                   withCredentials([string(credentialsId: 'DockerhubCICD', variable: 'DockerhubCICD')]) {
+                     sh "docker login -u aymenjbara -p ${DockerhubCICD}"
+                     }
+                     sh 'docker push aymenjbara/dockerfile_spring:2.2.4'
+                   }
+              }
               }
           }
 
