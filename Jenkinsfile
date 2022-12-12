@@ -44,7 +44,7 @@ pipeline {
               }
 	      stage('Build Docker Image') {
                  steps {
-                 sh 'docker build -t aymenjbara/dockerfile_spring:2.2.4 .'
+                 sh 'docker build -t aminejbara/dockerfile_spring:2.2.4 .'
                  }
               }
 		
